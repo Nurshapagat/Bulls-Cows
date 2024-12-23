@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bulls and Cows Game</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css"> 
+</head>
+<body>
+    <div class="instruction-popup" id="instruction-popup">
+        <div class="instruction-content">
+            <h2>Welcome to Bulls and Cows Game!</h2>
+            <p>In this game, you'll try to guess a 4-digit number. Here’s what each column means:</p>
+            <ul>
+                <li><strong>Bulls</strong> <span class="arrow">→</span> The number of digits that are correct and in the correct position.</li>
+                <li><strong>Cows</strong> <span class="arrow">→</span> The number of digits that are correct but in the wrong position.</li>
+                <li><strong>Guess</strong> <span class="arrow">→</span> Your guessed 4-digit number.</li>
+                <li><strong>Attempt</strong> <span class="arrow">→</span> The number of times you've guessed.</li>
+            </ul>
+            <p>Once you're ready, click "OK" to start the game!</p>
+            <button id="start-game" class="btn btn-success">OK</button>
+        </div>
+    </div>
+
+    <div class="game-container">
+        <h1>Bulls and Cows</h1>
+        <p>Try to guess the 4-digit number!</p>
+
+        <div class="guess-input">
+            <input type="text" id="user-guess" maxlength="4" class="form-control w-50" placeholder="Enter 4 digits">
+            <button id="submit-guess" class="btn btn-primary">Submit</button>
+        </div>
+
+        <div id="feedback" class="text-danger"></div>
+
+        <table class="table table-bordered mt-3">
+            <thead>
+                <tr>
+                    <th>Attempt</th>
+                    <th>Guess</th>
+                    <th>Bulls <img src="ferdinand2.jfif" alt="Bull Icon" class="message-icon"></th>
+                    <th>Cows <img src="cow.jfif" alt="Cow Icon" class="message-icon"></th>
+                </tr>
+            </thead>
+            <tbody id="guess-history">
+            </tbody>
+        </table>
+
+        <div class="result" id="result"></div>
+        <button id="restart-game" class="btn btn-secondary mt-3">Restart</button>
+
+        <div class="animation-container">
+            <img src="ferdinand2.jfif" alt="Bull" class="animal bull">
+            <img src="cow.jfif" alt="Cow" class="animal cow">
+        </div>
+    </div>
+
+    <div id="result-container" class="result-container">
+        <div class="result-content" id="result-message"></div>
+    </div>
+
+    <audio id="background-sound" src="mo.mp3"></audio>
+    <script src="script.js"></script> 
+</body>
+</html>

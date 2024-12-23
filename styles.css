@@ -1,0 +1,110 @@
+body {
+    background-image: url('fon.jfif'); 
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    margin: 0;
+    height: 100vh;
+}
+.game-container {
+    max-width: 700px;
+    margin: 50px auto;
+    text-align: center;
+    padding: 20px;
+    border: 2px solid #dee2e6;
+    border-radius: 10px; 
+    background-color: rgba(139, 69, 19, 0.9); 
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
+}
+.guess-input {
+    display: flex; /* элем қатарға */
+    justify-content: center; 
+    gap: 10px; 
+    margin-bottom: 20px;
+}
+.result {
+    margin-top: 20px;
+    font-size: 1.5rem;
+    background-color: #28a745; 
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    display: none; 
+}
+.result-container {
+    position: fixed; /*Экран тұрақты */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); 
+    display: none; 
+    justify-content: center;
+    align-items: center;
+}
+.result-content {
+    text-align: center;
+    color: white;
+    background-color: #28a745; 
+    padding: 20px;
+    border-radius: 10px;
+}
+.message-icon {
+    width: 50px;
+    height: 50px;
+}
+.animation-container {
+    position: relative; /*орналасуы, басқаларға кедергі емес */
+    width: 100%;
+    height: 200px;
+    margin-top: 10px;
+    overflow: hidden; /* 1- эл көрінбей қалуы*/
+}
+.animal {
+    position: absolute; /* relative байланысты*/
+    width: 100px;
+    height: 100px;
+    top: 50%;
+    
+}
+.bull {
+    left: 0;
+    animation: moveRight 3s linear infinite;
+}
+.cow {
+    right: 0;
+    animation: moveLeft 3s linear infinite; /* жылдамдығы тұрақты. шексіз*/
+}
+@keyframes moveRight {
+    0% { left: 0; }
+    100% { left: calc(100% - 100px); } 
+}
+@keyframes moveLeft {
+    0% { right: 0; }
+    100% { right: calc(100% - 100px); }
+}
+
+.instruction-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    z-index: 1;
+}
+.instruction-content {
+    background-color: #222;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 600px;
+}
+.arrow {
+    font-size: 1.5rem;
+    color: yellow;
+    margin-left: 10px;
+}
